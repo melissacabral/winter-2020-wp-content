@@ -1,6 +1,7 @@
 # ignore everything in the "wp-content" directory, except:
 # "mu-plugins", "plugins", "themes" directory
 uploads
+upgrade
 *
 !mu-plugins/mmc*
 !plugins/mmc*
