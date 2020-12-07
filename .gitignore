@@ -2,11 +2,11 @@
 # "mu-plugins", "plugins", "themes" directory
 uploads
 upgrade
-*
+plugins
 !mu-plugins/mmc*
 !plugins/mmc*
-!themes/mmc*
-
+!themes/mmc-simplest-ever
+!themes/mmc-slick-jaguar-portfolio
 # ignore these plugins
 plugins/hello.php
 plugins/akismet
