@@ -1,5 +1,20 @@
 <?php get_header(); //requires header.php ?>
 		<main class="content">
+			<h2>
+				Posts filtered by 
+				<?php 
+				if( is_category() ){
+					single_cat_title();
+					echo ' category';
+				}elseif( is_tag() ){
+					single_tag_title();
+					echo ' tag';
+				}elseif( is_date() ){
+					the_archive_title();
+				}
+				?>
+			</h2>
+
 
 			<?php //The Loop
 			if( have_posts() ){	

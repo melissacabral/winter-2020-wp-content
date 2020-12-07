@@ -14,9 +14,7 @@
 					</a>
 				</h2>
 				<div class="entry-content">
-					<?php 
-					//short version of the_content()
-					the_excerpt(); ?>
+					<?php the_content(); ?>
 				</div>
 				<div class="postmeta">
 					<span class="author">by: <?php the_author(); ?> </span>
