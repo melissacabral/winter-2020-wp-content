@@ -3,6 +3,7 @@
 uploads
 upgrade
 plugins
+themes/*.zip
 !mu-plugins/mmc*
 !plugins/mmc*
 !themes/mmc-simplest-ever
