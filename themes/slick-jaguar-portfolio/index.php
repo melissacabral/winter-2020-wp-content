@@ -8,6 +8,9 @@
 			?>
 
 			<article <?php post_class('clearfix'); ?>>
+				
+				<?php slick_post_thumbnail(); ?>
+
 				<h2 class="entry-title">
 					<a href="<?php the_permalink(); ?>">
 						<?php the_title(); ?>
