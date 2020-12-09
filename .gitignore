@@ -2,7 +2,7 @@
 # "mu-plugins", "plugins", "themes" directory
 uploads
 upgrade
-plugins
+
 themes/*.zip
 !mu-plugins/mmc*
 !plugins/mmc*
@@ -11,7 +11,7 @@ themes/*.zip
 # ignore these plugins
 plugins/hello.php
 plugins/akismet
-
+plugins/theme-inspector
 # ignore specific themes
 themes/twenty*/
 

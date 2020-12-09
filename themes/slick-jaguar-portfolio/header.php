@@ -53,18 +53,22 @@
 				<h2><?php bloginfo( 'description' ); ?></h2>
 			</div>
 			<div class="navigation">
-				<nav class="main-menu">
-					<ul>
-						<?php 
-						wp_list_pages( array(
-							'title_li' => '',
-						) ); 
-						?>
-					</ul>
-				</nav>
+				<?php 
+				//main menu
+				//display the menu from one menu location. register them first in functions.php
+				wp_nav_menu( array(
+					'theme_location' 	=> 'main_menu',
+					'container'			=> 'nav', //div or nav or ''
+					'container_class'	=> 'main-menu',
+				) ); ?>
 			</div>
 			<div class="utilities">
-				<!-- Utility menu will go here -->
+				<?php 
+				//social icon menu
+				wp_nav_menu( array(
+					'theme_location' => 'social_icons',
+					'fallback_cb' => false, //no default menu
+				) ); ?>
 			</div>
 			<?php get_search_form(); ?>
 

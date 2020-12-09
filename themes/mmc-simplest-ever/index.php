@@ -1,6 +1,17 @@
 <?php get_header(); //require header.php ?>
     <main class="content">
-      
+      <?php //example of conditional tags
+      if( is_front_page() ){
+        echo 'This is Front Page';
+      }elseif( is_home() ){
+        echo 'This is Home (blog)';
+      }elseif( is_single() ){
+        echo 'this is a single post';
+      }elseif( is_page() ){
+        echo 'This is a page';
+      }  ?>
+   
+
     <?php 
     //The Loop Begin:
     if( have_posts() ){ 

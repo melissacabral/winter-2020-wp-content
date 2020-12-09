@@ -1,0 +1,185 @@
+.mmc-screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.mmc-screen-reader-text:focus {
+    background-color: #eee;
+    clip: auto !important;
+    clip-path: none;
+    color: #444;
+    display: block;
+    font-size: 1em;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */
+}
+/* 
+== Social Icons menu layout
+*/
+.mmc-social-icons ul {
+    list-style: none;
+    margin: 0 0 -0.4375em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.mmc-social-icons li {
+    margin: 0 0.4375em 0.4375em 0;
+}
+
+
+/*the icons*/
+.mmc-social-icons a:before{
+    font-family: "social-logos";
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-size:24px;
+    line-height: 1;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;   
+    speak: none;
+    text-align: center;
+    text-decoration: inherit;
+	text-rendering:auto;
+    text-transform: none;
+    vertical-align: top;
+}
+.mmc-social-icons a {
+    color: inherit;
+    display: block;
+    height: 35px;
+    position: relative;
+    width: 35px;
+}
+/*default icon*/
+.mmc-social-icons a:before {
+    content: "\f415";
+}
+.mmc-social-icons a[href*="amazon.com"]:before {
+	content:"\f600";
+}
+.mmc-social-icons a[href*="behance.com"]:before {
+	content:"\f101";
+}
+
+.mmc-social-icons a[href*="blogger.com"]:before {
+	content:"\f601";
+}
+
+.mmc-social-icons a[href*="codepen.io"]:before {
+    content: "\f216";
+}
+.mmc-social-icons a[href*="dribbble.com"]:before {
+    content: "\f201";
+}
+.mmc-social-icons a[href*="dropbox.com"]:before {
+    content: "\f225";
+}
+.mmc-social-icons a[href*="eventbrite.com"]:before {
+    content: "\f603";
+}
+.mmc-social-icons a[href*="facebook.com"]:before {
+    content: "\f203";
+}
+.mmc-social-icons a[href*="flickr.com"]:before {
+    content: "\f211";
+}
+.mmc-social-icons a[href*="foursquare.com"]:before {
+    content: "\f226";
+}
+.mmc-social-icons a[href*="ghost.com"]:before {
+    content: "\f61c";
+}
+.mmc-social-icons a[href*="github.com"]:before {
+    content: "\f200";
+}
+.mmc-social-icons a[href*="google.com"]:before {
+    content: "\f102";
+}
+.mmc-social-icons a[href*="plus.google.com"]:before {
+    content: "\f218";
+}
+.mmc-social-icons a[href*="instagram.com"]:before {
+    content: "\f215";
+}
+.mmc-social-icons a[href*="linkedin.com"]:before {
+    content: "\f207";
+}
+.mmc-social-icons a[href^="mailto:"]:before {
+    content: "\f410";
+}
+.mmc-social-icons a[href*="medium.com"]:before {
+    content: "\f623";
+}
+.mmc-social-icons a[href*="pinterest.com"]:before {
+    content: "\f210";
+}
+.mmc-social-icons a[href*="getpocket.com"]:before {
+    content: "\f224";
+}
+.mmc-social-icons a[href*="polldaddy.com"]:before {
+    content: "\f217";
+}
+.mmc-social-icons a[href*="reddit.com"]:before {
+    content: "\f222";
+}
+.mmc-social-icons a[href*="skype.com"]:before {
+    content: "\f220";
+}
+.mmc-social-icons a[href*="spotify.com"]:before {
+    content: "\f515";
+}
+.mmc-social-icons a[href*="squarespace.com"]:before {
+    content: "\f605";
+}
+.mmc-social-icons a[href*="stumbleupon.com"]:before {
+    content: "\f223";
+}
+.mmc-social-icons a[href*="telegram.org"]:before {
+    content: "\f606";
+}
+.mmc-social-icons a[href*="tumblr.com"]:before {
+    content: "\f607";
+}
+.mmc-social-icons a[href*="twitch.tv"]:before {
+    content: "\f516";
+}
+.mmc-social-icons a[href*="twitter.com"]:before {
+    content: "\f202";
+}
+.mmc-social-icons a[href*="vimeo.com"]:before {
+    content: "\f212";
+}
+.mmc-social-icons a[href*="whatsapp.com"]:before {
+    content: "\f608";
+}
+.mmc-social-icons a[href*="wordpress.com"]:before,
+.mmc-social-icons a[href*="wordpress.org"]:before {
+    content: "\f205";
+}
+.mmc-social-icons a[href*="xanga.com"]:before {
+    content: "\f609";
+}
+.mmc-social-icons a[href*="youtube.com"]:before {
+    content: "\f213";
+}
+.mmc-social-icons a[href$="/feed/"]:before {
+    content: "\f413";
+}

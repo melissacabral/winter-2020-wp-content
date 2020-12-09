@@ -74,4 +74,17 @@ function slick_crumbs(){
 	echo 'these are some crumbs';
 }
 //add_action( 'loop_start', 'slick_crumbs' );
+
+
+//Add Menu Support
+//step one is to register the menu locations. 
+//the next step is to display them in your templates (header.php)
+add_action( 'init', 'slick_menu_locations' );
+function slick_menu_locations(){
+	register_nav_menus( array(
+		'main_menu' => 'Main Menu',
+		'social_icons' => 'Social Media Icons',
+	) );
+}
+
 //no close php
