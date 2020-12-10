@@ -86,4 +86,48 @@ function slick_menu_locations(){
 	) );
 }
 
+//Add Widget Areas (dynamic sidebars)
+//the next step is to display them in your templates
+add_action( 'widgets_init', 'slick_widget_areas' );
+function slick_widget_areas(){
+	register_sidebar(array(
+		'name' 				=> 'Blog Sidebar',
+		'id' 				=> 'blog_sidebar',
+		'before_widget' 	=> '<section id="%1$s" class="widget %2$s">',
+		'after_widget' 		=> '</section>',
+		'before_title' 		=> '<h3 class="widget-title">',
+		'after_title'		=> '</h3>',
+	));
+
+	register_sidebar(array(
+		'name' 				=> 'Footer Area',
+		'id' 				=> 'footer_area',
+		'description'		=> 'Appears at the bottom of every screen',
+		'before_widget' 	=> '<section id="%1$s" class="widget %2$s">',
+		'after_widget' 		=> '</section>',
+		'before_title' 		=> '<h3 class="widget-title">',
+		'after_title'		=> '</h3>',
+	));
+
+	register_sidebar(array(
+		'name' 				=> 'Front Page Features',
+		'id' 				=> 'front_page_features',
+		'description'		=> 'This looks best with three widgets',
+		'before_widget' 	=> '<section id="%1$s" class="widget %2$s">',
+		'after_widget' 		=> '</section>',
+		'before_title' 		=> '<h3 class="widget-title">',
+		'after_title'		=> '</h3>',
+	));
+
+	register_sidebar(array(
+		'name' 				=> 'Page Widgets',
+		'id' 				=> 'page_widgets',
+		'description'		=> 'This will only show up on pages that use the custom template "Page with Sidebar"',
+		'before_widget' 	=> '<section id="%1$s" class="widget %2$s">',
+		'after_widget' 		=> '</section>',
+		'before_title' 		=> '<h3 class="widget-title">',
+		'after_title'		=> '</h3>',
+	));
+}//end widget areas function
+
 //no close php
