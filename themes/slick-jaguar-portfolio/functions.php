@@ -83,7 +83,6 @@ add_action( 'init', 'slick_menu_locations' );
 function slick_menu_locations(){
 	register_nav_menus( array(
 		'main_menu' => 'Main Menu',
-		'social_icons' => 'Social Media Icons',
 	) );
 }
 

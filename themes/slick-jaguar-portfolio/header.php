@@ -64,11 +64,12 @@
 			</div>
 			<div class="utilities">
 				<?php 
-				//social icon menu
-				wp_nav_menu( array(
-					'theme_location' => 'social_icons',
-					'fallback_cb' => false, //no default menu
-				) ); ?>
+				//we are using a custom plugin for the social icons
+				//always check if the function exists when calling plugin functions
+				if( function_exists('mmc_social_icons') ){
+					mmc_social_icons();
+				}
+				?>
 			</div>
 			<?php get_search_form(); ?>
 

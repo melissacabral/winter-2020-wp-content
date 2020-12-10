@@ -51,6 +51,23 @@
 
 			<?php 
 				} //end while
+				?>
+			<div class="pagination">
+				<?php 
+				//archive pagination
+				//previous_posts_link('&larr; Newer Posts'); 
+				//next_posts_link('Older Posts &rarr;'); 
+				
+				//number style
+				the_posts_pagination(array(
+					'mid_size' => 3,
+					'prev_text' => '&larr; Previous',
+					'next_text' => 'Next &rarr;',
+				));
+				?>
+			</div>
+
+			<?php
 			}else{ ?>
 
 				<h2>No Posts to show</h2>

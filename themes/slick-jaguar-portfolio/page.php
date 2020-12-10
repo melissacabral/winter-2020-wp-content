@@ -15,6 +15,11 @@
 				</h2>
 				<div class="entry-content">
 					<?php the_content(); ?>
+					<?php 
+					//supports paged posts
+					wp_link_pages( array(
+						'next_or_number' => 'number',
+					) ); ?>
 				</div>
 				
 			</article>

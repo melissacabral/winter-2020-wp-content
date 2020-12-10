@@ -15,6 +15,12 @@
 				</h2>
 				<div class="entry-content">
 					<?php the_content(); ?>
+
+					<?php 
+					//supports paged posts
+					wp_link_pages( array(
+						'next_or_number' => 'number',
+					) ); ?>
 				</div>
 				<div class="postmeta">
 					<span class="author">by: <?php the_author(); ?> </span>
@@ -31,6 +37,15 @@
 
 			<?php 
 				} //end while
+			?>
+			<div class="pagination">
+				<?php 
+				//singular pagination
+				previous_post_link( '%link', '&larr; Previous: %title' );
+				next_post_link( '%link', 'Next: %title &rarr;' );
+				?>
+			</div>
+			<?php 
 			}else{ ?>
 
 				<h2>No Posts to show</h2>
