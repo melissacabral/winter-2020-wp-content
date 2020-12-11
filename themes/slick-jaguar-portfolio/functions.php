@@ -129,5 +129,44 @@ function slick_widget_areas(){
 		'after_title'		=> '</h3>',
 	));
 }//end widget areas function
+//This is where we can copy + paste code to eachother - live!
+
+
+// http://collabedit.com/ueg5y
+//Count all real comments on a post
+add_filter( 'get_comments_number', 'slick_comments_count' );
+function slick_comments_count(){
+    //post id
+    global $id;
+    $comments = get_approved_comments( $id );
+    $count = 0;
+    
+    //go through the comments array, counting each real comment
+    foreach( $comments AS $comment ){
+        if( $comment->comment_type == 'comment' ){
+            $count ++;
+        }
+    }
+    return $count;
+}
+
+//Count all the trackbacks and pingbacks on a post
+
+function slick_pings_count(){
+    //post id
+    global $id;
+    $comments = get_approved_comments( $id );
+    $count = 0;
+
+    //go through the comments array, counting each real comment
+    foreach( $comments AS $comment ){
+        if( $comment->comment_type != 'comment' ){
+            $count ++;
+        }
+    }
+
+    return $count;
+}
+
 
 //no close php

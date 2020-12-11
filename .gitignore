@@ -2,7 +2,7 @@
 # "mu-plugins", "plugins", "themes" directory
 uploads
 upgrade
-
+plugins
 themes/*.zip
 !mu-plugins/mmc*
 !plugins/mmc*
