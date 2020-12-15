@@ -168,5 +168,19 @@ function slick_pings_count(){
     return $count;
 }
 
+/**
+ * Attach any styles and scripts here
+ */
+add_action('wp_enqueue_scripts', 'slick_scripts');
+function slick_scripts(){
+	//main stylesheet
+	wp_enqueue_style( 'main-style', get_stylesheet_uri(), array(), '0.1' );
+}
+
+/**
+ * Custom image size for portfolio
+ */
+add_image_size( 'banner', 1200, 400, true );
+
 
 //no close php
