@@ -1,0 +1,45 @@
+/* all styles should include #mmc-howdy-bar */
+
+#mmc-howdy-bar{
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+	background-color:tomato;
+	color:white;
+	padding:.25em .5em;
+	text-align:center;
+	font-size:1.1em;
+	box-shadow: 2px 2px 4px rgba(0,0,0,.2);
+}
+.admin-bar #mmc-howdy-bar{
+	top:32px;
+}
+
+/*button*/
+#mmc-howdy-bar .howdy-button{
+	background-color: white;
+	color:black;
+	display: inline-block;
+	padding:.2em 1em;
+	margin:0 .5em;
+	cursor:pointer;
+}
+
+#mmc-howdy-bar .howdy-button:hover{
+	background-color:black;
+	color:white;
+}
+
+/*dismiss button*/
+#mmc-howdy-bar .howdy-dismiss{
+	display: inline-block;
+	color:white;
+	border-radius:1000px;
+	width:1.2em;
+	height:1.2em;
+	line-height: 1.1em;
+	background-color: rgba(0,0,0,.2);
+	float:right;
+	cursor:pointer;
+}

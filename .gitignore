@@ -1,20 +1,18 @@
 # ignore everything in the "wp-content" directory, except:
 # "mu-plugins", "plugins", "themes" directory
 backups-dup-lite
-autoptimize
-
+advanced-custom-fields
+duplicator
+autoptimize*
 uploads
 upgrade
-plugins
-themes/*.zip
-!mu-plugins/mmc*
-!plugins/mmc*
-!themes/mmc-simplest-ever
-!themes/mmc-slick-jaguar-portfolio
-# ignore these plugins
-plugins/hello.php
-plugins/akismet
-plugins/theme-inspector
+monster-widget
+regenerate-thumbnails
+yet-another-related-posts-plugin
+*.zip
+hello.php
+akismet
+theme-inspector
 # ignore specific themes
 themes/twenty*/
 
