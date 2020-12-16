@@ -25,6 +25,8 @@
 							<h3><?php echo $subtitle; ?></h3>
 						<?php } ?>
 
+						<h3><?php the_terms( $id, 'work_category', '', ' | ', '' ); ?></h3>
+
 					</div>
 
 				</div><!-- end .overlay -->

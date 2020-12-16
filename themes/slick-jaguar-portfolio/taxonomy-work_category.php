@@ -4,9 +4,14 @@
 			<?php //The Loop
 			if( have_posts() ){	
 			?>
-			<h1 class="page-heading"><?php post_type_archive_title(); ?></h1>
+			<h1 class="page-heading">
+				<a href="<?php echo get_post_type_archive_link( 'work' ); ?>">Portfolio </a>
+				 - 
+				<?php single_cat_title(); ?>					
+			</h1>
 
 			<ul class="portfolio-subnav">
+				<li><a href="<?php echo get_post_type_archive_link( 'work' ); ?>">All Work</a></li>
 				<?php 
 				//list all terms in our custom taxonomy "work category"
 				wp_list_categories( array(
