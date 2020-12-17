@@ -974,3 +974,11 @@ check for browsers that support grid
         }
     }
 }/*end css grid support requiement*/
+
+
+/*
+== WooCommerce additions
+ */
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
+    background-color: tomato;
+}
