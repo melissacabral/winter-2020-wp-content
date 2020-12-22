@@ -1,4 +1,6 @@
 <?php
+//max width of auto embeds (youtube, etc)
+if ( ! isset( $content_width ) ) $content_width = 650;
 //activate customizer > background options
 add_theme_support( 'custom-background' );
 
@@ -184,6 +186,9 @@ add_action('wp_enqueue_scripts', 'slick_scripts');
 function slick_scripts(){
 	//main stylesheet
 	wp_enqueue_style( 'main-style', get_stylesheet_uri(), array(), '0.1' );
+	if(is_singular()){
+	 wp_enqueue_script( 'comment-reply' );
+	}
 }
 
 /**
@@ -232,7 +237,7 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	ob_start();
 
 	?>
-	<a class="cart-customlocation" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); ?></a>
+	<a class="cart-customlocation" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('View your shopping cart', 'portfolio-shop-wcm400'); ?>"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'portfolio-shop-wcm400'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); ?></a>
 	<?php
 	$fragments['a.cart-customlocation'] = ob_get_clean();
 	return $fragments;

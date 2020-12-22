@@ -7,7 +7,10 @@ Author URI: http://melissacabral.com
 Version: 0.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
-Tags: Grid Layout, Portfolio, Blog, E-Commerce
+Text Domain: portfolio-shop-wcm400
+Tested up to: 5.6
+Requires PHP: 7.0
+Tags: grid-layout, Portfolio, Blog, E-Commerce, custom-menu, custom-logo, custom-header
 
 ------------------
 TABLE OF CONTENTS
@@ -558,6 +561,14 @@ a img.aligncenter {
     line-height: 17px;
     margin: 0;
     padding: 0 4px 5px;
+}
+
+.gallery-caption{
+    color:#4D4D4D;
+}
+.bypostauthor{
+    background-color: #FFECCD;
+    padding:1em;
 }
 
 /* Text meant only for screen readers. */

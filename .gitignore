@@ -3,9 +3,11 @@
 backups-dup-lite
 plugins/woocommerce
 plugins/simply-show-hooks
+plugins/wordpress-importer
 advanced-custom-fields
 duplicator
 autoptimize*
+theme-check
 uploads
 upgrade
 monster-widget
