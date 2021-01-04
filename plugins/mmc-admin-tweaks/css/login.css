@@ -1,0 +1,24 @@
+body{
+	background-color: #F5A85C;
+}
+.login h1 a{
+	background-image:url(../images/logo.svg);
+	background-size: 100px;
+	height:100px;
+	width:100px;
+}
+.wp-core-ui .button-primary{
+	width:100%;
+	display:block;
+	float:none;
+	margin-top:1em;
+	background:tomato;
+	border-color:tomato;
+}
+.wp-core-ui .button-primary.focus, .wp-core-ui .button-primary.hover, .wp-core-ui .button-primary:focus, .wp-core-ui .button-primary:hover{
+	background:#F5A85C;
+	border-color:#F5A85C;
+}
+.login form .forgetmenot{
+	float:none;
+}
