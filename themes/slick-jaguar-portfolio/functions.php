@@ -274,4 +274,124 @@ function mmc_slick_remove_hooks(){
 //put the price back in a lower order
 add_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 6);
 
+
+/**
+ * Customize API Additions
+ */
+add_action( 'customize_register', 'mmc_customize' );
+function mmc_customize( $wp_customize ){
+	//header bg color - use the existing "colors" section
+	$wp_customize->add_setting( 'header_bg_color', array(
+		'default' 			=> '#D9DDDB',
+		'sanitize_callback' => 'wp_strip_all_tags',
+	) );
+
+	//Add the user interface - color picker control
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+		$wp_customize, 'header_bg_color_ui', array(
+			'label' 	=> 'Header Background Color',
+			'section'	=> 'colors',
+			'settings'	=> 'header_bg_color',
+		)
+	) );
+
+	//optional header overlay
+	$wp_customize->add_setting( 'header_overlay', array(
+		'default' => 'no',
+		'sanitize_callback' => 'wp_strip_all_tags',
+	) );
+
+	//user interface - checkbox
+	$wp_customize->add_control( new WP_Customize_Control(
+		$wp_customize, 'header_overlay_ui', array(
+			'label' 	=> 'Show a darkened overlay',
+			'section'	=> 'header_image',
+			'settings' 	=> 'header_overlay',
+							//we used radio because checkbox wasn't working!
+			'type'		=> 'radio',  //or text, select, textarea, etc
+			'priority' 	=> 5,
+			'choices'	=> array(
+								'yes' => 'Yes',
+								'no' => 'No',
+							),
+
+		)
+	) ); 
+
+	//typography options - font choices
+	$wp_customize->add_section('mmc_typography', array(
+		'title' 		=> 'Typography',
+		'capability' 	=> 'edit_theme_options',
+		'priority'		=> 50,
+	));
+
+	$wp_customize->add_setting( 'heading_font', array(
+		'default' 				=> 'Roboto',
+		'sanitize_callback'  	=> 'wp_strip_all_tags',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Control(
+		$wp_customize, 'heading_font_ui', array(
+			'label' 		=> 'Heading Font',
+			'section' 		=> 'mmc_typography',
+			'settings' 		=> 'heading_font',
+			'type'			=> 'text',
+			'description' 	=> 'Enter any Google Font name. Spelling and capitalization counts!',
+			// 'choices'  	=> array(
+			// 					'Roboto' 		=> 'Roboto - Clean and Modern',
+			// 					'Redressed' 	=> 'Redressed - kinda scripty',
+			// 					'Hanalei Fill' 	=> 'Hanalei Fill - Bold Polynesian',
+			// 					'Roboto Slab'  	=> 'Roboto Slab - Modern Serif',
+			// 				),
+		)
+	) );
+} //end mmc_customize
+
+
+/**
+ * Display the customized options as CSS
+ */
+add_action( 'wp_head', 'mmc_custom_css' );
+function mmc_custom_css(){
+	?>
+	<style>
+		.header{
+			background-color: <?php echo get_theme_mod('header_bg_color'); ?> ;
+		}
+
+		h1, h2, h4{
+			font-family: "<?php echo get_theme_mod('heading_font'); ?>", Georgia, serif;
+		}
+
+		<?php if( get_theme_mod('header_overlay') == 'yes' ){ ?>
+			.header{
+				position:relative;
+			}
+			.header:before{
+				content:'';
+				position:absolute;
+				top:0;
+				left:0;
+				width:100%;
+				height:100%;
+				z-index: 1;
+				background-color: rgba(0,0,0,.6);
+			}
+			.header > * {
+				z-index: 1000;
+			}
+		<?php } //end if header_overlay ?>
+
+	</style>
+	<?php
+}
+
+//Custom stylesheet for google font choice
+add_action('wp_enqueue_scripts', 'mmc_google_font');
+function mmc_google_font(){
+	//convert spaces to + 
+	$font = urlencode( get_theme_mod('heading_font') );
+	wp_enqueue_style('google_font', "https://fonts.googleapis.com/css2?family=$font&display=swap");
+}
+
 //no close php
